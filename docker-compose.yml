@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  db:
+    container_name: sql-db
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password --mysqlx=0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=admin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  server:
+    container_name: django-server
+    build: ./Backend
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./Backend:/code
+    command: >
+      bash -c 
+      "
+      python manage.py migrate && 
+      python manage.py runserver 0.0.0.0:8000
+      "
+    depends_on:
+      - db
+    links:
+      - db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  mysql_data:
