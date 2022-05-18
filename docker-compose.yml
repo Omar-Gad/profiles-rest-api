@@ -35,6 +35,17 @@ services:
       - db
     extra_hosts:
       - "host.docker.internal:host-gateway"
+  
+  ui:
+    container_name: react-ui
+    build: ./Frontend/profiles_ui
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./Frontend:/code
+    command: bash -c "cd profiles_ui && npm start"
+    depends_on:
+      - server
 
 volumes:
   mysql_data:
