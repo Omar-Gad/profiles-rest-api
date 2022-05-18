@@ -22,6 +22,7 @@ function Post(props) {
                 }
             })
         onUpdate()
+        setPost('')
     }
 
     return (
