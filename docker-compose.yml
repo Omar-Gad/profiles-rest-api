@@ -36,7 +36,6 @@ services:
     build: ./Frontend/profiles_ui
     ports:
       - '3000:3000'
-    command: bash -c "ls && npm start"
     depends_on:
       - server
 
