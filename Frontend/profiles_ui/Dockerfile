@@ -4,7 +4,10 @@ RUN apk update && apk add bash
 
 WORKDIR /code
 
-COPY package.json ./
+COPY package.json .
+
 RUN npm install
 
 COPY . .
+
+CMD [ "npm", "start" ]

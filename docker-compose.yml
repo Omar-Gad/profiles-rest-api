@@ -23,12 +23,7 @@ services:
       - '8000:8000'
     volumes:
       - ./Backend:/code
-    command: >
-      bash -c 
-      "
-      python manage.py migrate && 
-      python manage.py runserver 0.0.0.0:8000
-      "
+    command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
     links:
@@ -41,9 +36,7 @@ services:
     build: ./Frontend/profiles_ui
     ports:
       - '3000:3000'
-    volumes:
-      - ./Frontend:/code
-    command: bash -c "cd profiles_ui && npm start"
+    command: bash -c "ls && npm start"
     depends_on:
       - server
 
