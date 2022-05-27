@@ -1,7 +1,12 @@
 .nav{
-  width: 100%;
-  height: 60px;
-  background: rgb(132, 132, 132);
+  height:60px;
+  background-color:teal;
+  color:white;
+  box-shadow: 0 4px 4px 0.2px rgba(0,0,0,.5);
+  margin-bottom: 5px;
+  text-decoration: none;
+  color:white;
+  font-weight: 300;
 }
 
 .nav div{
@@ -13,28 +18,29 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 5px rgb(5, 5, 5);
+  border-top-left-radius: 200px;
+  border-end-end-radius: 200px;
+  box-shadow: 0 10px 8px teal;
   text-align: center;
   width: 700px;
-  height: 600px;
+  padding: 0px 0px 30px 0px;
   margin: 3% auto;
-  background-color: rgb(239, 239, 239);
+  background-color: white;
 }
 
 .log-in{
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 5px rgb(5, 5, 5);
+  border-top-left-radius: 200px;
+  border-end-end-radius: 200px;
+  box-shadow: 0 10px 8px teal;
+  
   text-align: center;
-  width: 700px;
-  height: 400px;
-  margin: 10% auto;
-  background-color: rgb(239, 239, 239);
+  padding: 50px;
+  width: 600px;
+  margin: 50px auto;
+  background-color: white;
 }
 
 .feed{
@@ -43,10 +49,11 @@
   align-items: center;
   width: 700px;
   margin: 25px auto;
-  border: 3px solid black;
-  border-radius: 30px;
-  box-shadow: 0 0 10px 5px rgb(5, 5, 5);
-  background-color: rgb(239, 239, 239);
+  border-top-left-radius: 200px;
+  border-end-end-radius: 200px;
+  box-shadow: 0 10px 8px teal;
+  border: #ccc solid 1px;
+
 }
 
 .post{
@@ -78,5 +85,12 @@
 .profile div p{
   margin-left: 40px;
 }
+.feed-header
+{
+  font-weight: 300;
+}
 
-
+.author{
+  font-weight: 300;
+  font-size: 1.5em;
+}
