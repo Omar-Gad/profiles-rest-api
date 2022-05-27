@@ -20,9 +20,9 @@ function Nav() {
     return (
         <div className="nav">
 
-            <Link to='/feed'><div style={{ cursor: 'pointer', color: 'BlueViolet', float: 'left' }}>Feed</div></Link>
+            <Link to='/feed'><div style={{ cursor: 'pointer', color: 'white', float: 'left' }}>Feed</div></Link>
 
-            <div onClick={logout} style={{ cursor: 'pointer', color: 'BlueViolet' }}>{cookies.token?'Log out': 'Log in'}</div>
+            <div onClick={logout} style={{ cursor: 'pointer', color: 'white' }}>{cookies.token?'Log out': 'Log in'}</div>
             <div>{userGreet}</div>
         </div>
     )

@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Signup() {
 
     let navigate = useNavigate()
-    
+
     const [cookies, setCookie] = useCookies()
 
 
@@ -18,14 +18,14 @@ function Signup() {
     const [password, setPassword] = useState('');
 
     const submit = async () => {
-        await axios.post('http://localhost:8000/api/profile/', {
+        await axios.post('http://host.docker.internal:8000/api/profile/', {
             email,
             name,
             password
         })
 
 
-        const res = await axios.post('http://localhost:8000/api/login/', {
+        const res = await axios.post('http://host.docker.internal:8000/api/login/', {
             username: email,
             password: password
 
@@ -67,10 +67,10 @@ function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
                 variant="outlined"
             />
-            <Button onClick={submit} variant="contained">sign up</Button>
+            <Button onClick={submit} style={{ backgroundColor: 'teal', width: '400px' }} variant="contained">sign up</Button>
             <h3>
                 Have account? <Link style={{ textDecoration: 'none' }} to='/login' >
-                    <span style={{ cursor: 'pointer', color: 'blueviolet' }} >Login in</span>
+                    <span style={{ cursor: 'pointer', color: 'crimson', fontWeight: '450' }} >Login in</span>
                 </Link>
             </h3>
         </div>

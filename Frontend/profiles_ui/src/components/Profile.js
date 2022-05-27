@@ -14,7 +14,7 @@ function Profile(props) {
                 <Avatar>{letter}</Avatar>
                 <p>{status}</p>
             </div>
-            <p>{author}</p>
+            <p className="author">{author}</p>
         </div>
     )
 }

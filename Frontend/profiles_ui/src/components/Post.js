@@ -13,7 +13,7 @@ function Post(props) {
     const [post, setPost] = useState('')
 
     const onPost = async () => {
-        await axios.post('http://localhost:8000/api/feed/', {
+        await axios.post('http://host.docker.internal:8000/api/feed/', {
             status_text: post
         },
             {
@@ -37,7 +37,7 @@ function Post(props) {
                 onChange={(e) => setPost(e.target.value)}
             />
 
-            <Button onClick={onPost} variant="contained">Post</Button>
+            <Button onClick={onPost} style={{ backgroundColor: 'teal' }} variant="contained">Post</Button>
         </div>
     )
 }

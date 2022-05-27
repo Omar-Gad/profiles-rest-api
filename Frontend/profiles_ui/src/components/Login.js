@@ -18,7 +18,7 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const submit = async () => {
-        const res = await axios.post('http://localhost:8000/api/login/', {
+        const res = await axios.post('http://host.docker.internal:8000/api/login/', {
             username: email,
             password: password
 
@@ -34,7 +34,7 @@ function Login() {
 
     return (
         <div className='log-in'>
-            <h1>Log in</h1>
+            <h1 style={{fontWeight:'250'}}>Log in</h1>
             <TextField
                 sx={style}
                 id="Email"
@@ -52,10 +52,10 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 variant="outlined"
             />
-            <Button onClick={submit} variant="contained">log in</Button>
+            <Button onClick={submit} style={{backgroundColor:'teal',width:'400px'}} variant="contained">log in</Button>
             <h3>
                 No account? <Link style={{ textDecoration: 'none' }} to='/'>
-                    <span style={{ cursor: 'pointer', color: 'blueviolet' }} >Sign in</span>
+                    <span style={{ cursor: 'pointer', color: 'crimson',fontWeight:'450' }} >Sign up</span>
                 </Link>
             </h3>
         </div>

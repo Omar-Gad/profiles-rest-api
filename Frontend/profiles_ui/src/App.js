@@ -14,7 +14,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/feed/')
+    axios.get('http://host.docker.internal:8000/api/feed/')
       .then(res => {
         const data = res.data
         setProfiles(data)
